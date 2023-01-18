@@ -1,9 +1,12 @@
 import Categories from "./categories.models.js";
-import TodosCategories from "./todos-categories.models.js";
+import TodosCategories from "./todosCategories.models.js";
 import Todos from "./todos.models.js";
 import Users from "./users.models.js";
 
 const initModels = () => {
+  Categories;
+  TodosCategories;
+
   // relaciones
   // hasOne => tiene uno solo
   // hasMany => tiene muchos
@@ -14,8 +17,8 @@ const initModels = () => {
 
   // relacion m-m
 
-  TodosCategories.belongsTo(Todos, { as: "task", foreignKey: "todo_id" });
-  Todos.hasMany(TodosCategories, { as: "category", foreignKey: "todo_id" });
+  TodosCategories.belongsTo(Todos, { as: "task", foreignKey: "todos_id" });
+  Todos.hasMany(TodosCategories, { as: "categories", foreignKey: "todos_id" });
 
   TodosCategories.belongsTo(Categories, {
     as: "category",
@@ -25,6 +28,7 @@ const initModels = () => {
     as: "task",
     foreignKey: "category_id",
   });
+
 };
 
 export default initModels;

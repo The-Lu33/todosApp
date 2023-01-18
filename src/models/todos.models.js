@@ -22,7 +22,7 @@ const Todos = db.define("todos", {
     defaultValue: false,
     field: "is_complete",
   },
-  useId: {
+  userId: {
     type: DataTypes.INTEGER,
     allowNull: "false",
     field: "user_id",

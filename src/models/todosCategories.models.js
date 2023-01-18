@@ -16,19 +16,19 @@ const TodosCategories = db.define(
       type: DataTypes.INTEGER,
       allowNull: false,
       field: "category_id",
-      references:{
-        model:Categories,
-        key: 'id'
-      }
+      references: {
+        model: Categories,
+        key: "id",
+      },
     },
     todosId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       field: "todos_id",
-      references:{
+      references: {
         model: Todos,
-        key: 'id'
-      }
+        key: "id",
+      },
     },
   },
   {
